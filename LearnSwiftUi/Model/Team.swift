@@ -18,7 +18,7 @@ struct Team {
 
 
 extension Team {
-    var dummyData: [Team] {
+    static var dummyData: [Team] {
         return [
             Team(id: .arsenal, name: "Team 1", info: "This is arsenal Team", manager: Manager(name: "Arteta", job: .manager), founded: "1980"),
             Team(id: .astonVilla, name: "Team 2", info: "This is astonVilla Team", manager: Manager(name: "manager 2", job: .manager), founded: "1900"),

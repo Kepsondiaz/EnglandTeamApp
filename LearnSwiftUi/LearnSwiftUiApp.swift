@@ -13,7 +13,7 @@ struct LearnSwiftUiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(team: Team.dummyData[0])
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
