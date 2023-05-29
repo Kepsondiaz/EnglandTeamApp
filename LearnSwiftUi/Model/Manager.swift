@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum Job {
-    case  manager
-    case headCoach
+enum Job: String {
+    case  manager = "Manager"
+    case headCoach = "Head Coach"
 }
 
 struct Manager {
