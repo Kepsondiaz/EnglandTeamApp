@@ -44,10 +44,7 @@ struct ContentView: View {
                 }
                 
             }
-            .padding(8)
-            .foregroundColor(.white)
-            .background(team.id.background)
-        .cornerRadius(10)
+            .applyTeamCardViewStyle(teamType: team.id)
         }
     }
         
