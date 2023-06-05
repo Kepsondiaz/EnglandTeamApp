@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class TeamsViewModel {
+class TeamsViewModel: ObservableObject {
     
-   private(set) var teams: [Team] = [
+    @Published private(set) var teams: [Team] = [
         Team(id: .arsenal,
              name: "Arsenal",
              info: "Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 league titles (including one unbeaten title), a record 14 FA Cups, two League Cups, 16 FA Community Shields, the League Centenary Trophy, one European Cup Winners' Cup, and one Inter-Cities Fairs Cup.",
@@ -68,7 +68,7 @@ class TeamsViewModel {
         Team(id: .manchesterUnited,
              name: "Manchester United",
              info: "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
-             manager: .init(name: "Ole Gunnar Solskjær", job: .manager),
+             manager: .init(name: "Erik Ten Hag", job: .manager),
              founded: "1902"),
         Team(id: .newcastle,
              name: "Newcastle United",
@@ -106,4 +106,15 @@ class TeamsViewModel {
              manager: .init(name: "Nuno Espírito Santo", job: .headCoach),
              founded: "1877"),
     ]
+    
+    func togglePlayback(for team: Team) {
+        
+        for index in teams.indices {
+            if teams[index].id == team.id {
+                teams[index].tooglePlayback()
+            }else{
+                teams[index].setIsPlayback(state: false)
+            }
+        }
+    }
 }

@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct Team {
+struct Team: Identifiable{
     let id: TeamType
     let name: String
     let info: String
     let manager: Manager
     let founded: String
     var isplaying: Bool = false
+    
+    mutating func tooglePlayback() {
+        self.isplaying.toggle()
+    }
+    
+    mutating func setIsPlayback(state: Bool) {
+        self.isplaying = state
+    }
 }
 
 
